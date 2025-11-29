@@ -1,0 +1,13 @@
+# PowerShell
+*.psd1
+*.psm1
+*.ps1xml
+*.psm1.psd1
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Visual Studio / IDE
+.vscode/
+.idea/
