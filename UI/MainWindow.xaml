@@ -1,0 +1,10 @@
+<!-- Minimal WPF window skeleton. Replace with full UI definitions. -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="PS-CEW-Platform" Height="600" Width="900">
+    <Grid>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" Text="PS-CEW-Platform - Placeholder UI" Margin="8"/>
+            <!-- Add panels, listviews, preview pane, command input -->
+        </DockPanel>
+    </Grid>
+</Window>
