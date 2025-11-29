@@ -1,0 +1,22 @@
+name: PowerShell CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PowerShell
+        uses: actions/setup-python@v4
+        # Note: For PowerShell core, default runner includes pwsh. Make sure your scripts target pwsh.
+      - name: Run PSScriptAnalyzer
+        run: |
+          pwsh -Command "Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser; Invoke-ScriptAnalyzer -Path src -Recurse"
+      - name: Run Pester tests
+        run: |
+          pwsh -Command "Install-Module -Name Pester -Force -Scope CurrentUser; Invoke-Pester -Path tests -Output Detailed"
